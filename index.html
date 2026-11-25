@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7fb">
+  <meta name="description" content="EduSpace — пространство для обучения, развития и новых достижений.">
+  <title>EduSpace — Учись без границ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="home"><span class="brand-mark">e</span><span>edu<span class="brand-light">space</span></span></a>
+      <div class="side-label">ПРОСТРАНСТВО</div>
+      <nav class="side-nav" aria-label="Главная навигация">
+        <button class="nav-link active" data-page="home"><span>⌂</span> Обзор</button>
+        <button class="nav-link" data-page="courses"><span>▤</span> Каталог курсов</button>
+        <button class="nav-link" data-page="my-learning"><span>◫</span> Моё обучение</button>
+        <button class="nav-link" data-page="notes"><span>▧</span> Мои заметки</button>
+        <button class="nav-link" data-page="planner"><span>◷</span> Планировщик</button>
+      </nav>
+      <div class="side-label side-label-spaced">МОЙ РЕЗУЛЬТАТ</div>
+      <nav class="side-nav">
+        <button class="nav-link" data-page="progress"><span>↗</span> Мой прогресс</button>
+        <button class="nav-link" data-page="achievements"><span>✧</span> Достижения</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><div class="tip-icon">✦</div><b>Маленький шаг<br>каждый день.</b><p>Большие результаты начинаются с постоянства.</p></div>
+        <button class="profile-mini" id="profileButton"><span class="avatar" id="miniAvatar">A</span><span class="profile-mini-text"><b id="miniName">Гость</b><small id="miniEmail">Войти в аккаунт</small></span><span class="dots">•••</span></button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Открыть меню">☰</button>
+        <div class="breadcrumb">ТВОЁ ПРОСТРАНСТВО <span>/</span> <b id="pageCrumb">Обзор</b></div>
+        <div class="top-actions">
+          <label class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="Найти курс или тему..." aria-label="Поиск"><kbd>⌘ K</kbd></label>
+          <button class="icon-button" id="themeToggle" aria-label="Переключить тему">◐</button>
+          <button class="icon-button notification-button" id="notificationButton" aria-label="Уведомления">♧<i></i></button>
+          <button class="top-avatar" id="topAvatar">A</button>
+        </div>
+      </header>
+      <div class="page-wrap">
+        <section class="page active" id="page-home">
+          <div class="welcome-row">
+            <div><div class="eyebrow"><span class="eyebrow-line"></span> ПОНЕДЕЛЬНИК, ТВОЙ НОВЫЙ СТАРТ</div><h1>Привет, <em id="welcomeName">исследователь</em> 👋</h1><p class="muted">Каждый урок приближает тебя к тому, кем ты хочешь стать.</p></div>
+            <button class="btn btn-dark" data-page="courses">Найти курс <span>↗</span></button>
+          </div>
+          <div class="hero-panel">
+            <div class="hero-copy"><span class="pill pill-light">ТВОЯ СЛЕДУЮЩАЯ ГЛАВА</span><h2>Знания открывают<br><i>новые горизонты.</i></h2><p>Выбери направление, двигайся в своём темпе и превращай любопытство в навыки.</p><button class="btn btn-white" data-page="courses">Исследовать курсы <span>→</span></button></div>
+            <div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orbit"></div><div class="art-card"><span>✳</span><b>LEARN</b><small>GROW · CREATE</small></div><div class="art-spark spark-one">✦</div><div class="art-spark spark-two">✧</div></div>
+            <div class="hero-index">01 <span>/ 04</span></div>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span>ТВОЙ УРОВЕНЬ</span><span class="stat-icon lilac">✧</span></div><div class="stat-number" id="levelNumber">01 <small>Уровень</small></div><div class="progress-track"><span id="xpBar" style="width:18%"></span></div><div class="stat-foot"><span id="xpText">90 / 500 XP</span><span>До следующего</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>СЕРИЯ ОБУЧЕНИЯ</span><span class="stat-icon orange">♨</span></div><div class="stat-number"><span id="streakNumber">1</span> <small>день подряд</small></div><div class="week-dots"><i class="done">П</i><i>В</i><i>С</i><i>Ч</i><i>П</i><i>С</i><i>В</i></div><div class="stat-foot"><span>Продолжай в том же духе</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>ЗАВЕРШЕНО УРОКОВ</span><span class="stat-icon blue">▤</span></div><div class="stat-number" id="lessonCount">0 <small>уроков</small></div><div class="stat-foot"><span>Твой прогресс растёт</span><span>↗</span></div></article>
+          </div>
+          <div class="section-heading"><div><div class="eyebrow">ПРОДОЛЖАЙ С ТОГО МЕСТА</div><h2>Твоё обучение</h2></div><button class="text-link" data-page="my-learning">Все курсы <span>→</span></button></div>
+          <div class="course-grid compact-grid" id="continueGrid"></div>
+          <div class="section-heading section-heading-lower"><div><div class="eyebrow">ВЫБИРАЙ СВОЙ ПУТЬ</div><h2>Популярные направления</h2></div><button class="text-link" data-page="courses">Все направления <span>→</span></button></div>
+          <div class="category-grid">
+            <button class="category-card cat-purple" data-category="Программирование"><span class="category-symbol">⌘</span><b>Программирование</b><small>Создавай цифровое будущее</small><span class="category-arrow">↗</span></button>
+            <button class="category-card cat-blue" data-category="Английский"><span class="category-symbol">Aa</span><b>Английский язык</b><small>Открывай мир общения</small><span class="category-arrow">↗</span></button>
+            <button class="category-card cat-peach" data-category="Математика"><span class="category-symbol">∑</span><b>Математика</b><small>Думай шире и точнее</small><span class="category-arrow">↗</span></button>
+            <button class="category-card cat-green" data-category="Дизайн"><span class="category-symbol">◈</span><b>Дизайн</b><small>Превращай идеи в форму</small><span class="category-arrow">↗</span></button>
+          </div>
+        </section>
+
+        <section class="page" id="page-courses">
+          <div class="page-intro"><div class="eyebrow">БИБЛИОТЕКА ЗНАНИЙ</div><h1>Найди своё <em>направление.</em></h1><p class="muted">Курсы, которые помогают превращать интерес в реальные навыки.</p></div>
+          <div class="catalog-toolbar"><label class="catalog-search">⌕ <input id="courseSearch" placeholder="Поиск курсов..."></label><select id="levelFilter" aria-label="Уровень"><option value="all">Все уровни</option><option>Начальный</option><option>Средний</option><option>Продвинутый</option></select><select id="sortFilter" aria-label="Сортировка"><option value="popular">Популярные</option><option value="name">По названию</option></select></div>
+          <div class="filter-chips" id="categoryFilters"><button class="chip selected" data-filter="all">Все курсы</button><button class="chip" data-filter="Программирование">Программирование</button><button class="chip" data-filter="Английский">Английский</button><button class="chip" data-filter="Математика">Математика</button><button class="chip" data-filter="Дизайн">Дизайн</button></div>
+          <div class="course-grid" id="catalogGrid"></div>
+        </section>
+
+        <section class="page" id="page-my-learning">
+          <div class="page-intro"><div class="eyebrow">ТВОЙ ПУТЬ</div><h1>Моё <em>обучение.</em></h1><p class="muted">Все курсы, к которым ты присоединился, в одном месте.</p></div>
+          <div class="course-grid" id="myLearningGrid"></div>
+        </section>
+
+        <section class="page" id="page-notes">
+          <div class="page-intro split-intro"><div><div class="eyebrow">ТВОИ МЫСЛИ И ИДЕИ</div><h1>Место для <em>важного.</em></h1><p class="muted">Сохраняй открытия, мысли и полезные знания.</p></div><button class="btn btn-dark" id="newNote">＋ Новая заметка</button></div>
+          <div class="notes-toolbar"><input id="noteSearch" placeholder="Найти заметку..."><span id="notesCount">0 заметок</span></div><div class="notes-grid" id="notesGrid"></div>
+        </section>
+
+        <section class="page" id="page-planner">
+          <div class="page-intro"><div class="eyebrow">МАЛЕНЬКИЕ ШАГИ — БОЛЬШИЕ ПЕРЕМЕНЫ</div><h1>Твой <em>план.</em></h1><p class="muted">Собери день вокруг того, что действительно важно.</p></div>
+          <div class="planner-layout"><div class="panel planner-main"><div class="panel-title"><div><h2>Задачи</h2><p class="muted">Сфокусируйся на следующем шаге.</p></div><span class="date-label" id="todayDate"></span></div><form id="taskForm" class="task-form"><input id="taskInput" required maxlength="90" placeholder="Например, повторить 10 новых слов..."><button class="btn btn-dark" type="submit">Добавить</button></form><div id="taskList" class="task-list"></div></div><div class="panel focus-panel"><div class="eyebrow">ТВОЙ ФОКУС</div><div class="focus-number">25<span>мин</span></div><p>Одно дело за раз. Убери лишнее и дай себе возможность сосредоточиться.</p><button class="btn btn-outline" id="focusButton">Начать фокус-сессию</button><small id="focusStatus">Техника Pomodoro</small></div></div>
+        </section>
+
+        <section class="page" id="page-progress">
+          <div class="page-intro"><div class="eyebrow">ТВОЙ РОСТ В ЦИФРАХ</div><h1>Шаг за <em>шагом.</em></h1><p class="muted">Смотри, как усилия превращаются в результат.</p></div>
+          <div class="stats-grid progress-stats"><article class="stat-card"><div class="stat-top"><span>ОПЫТ</span><span class="stat-icon lilac">✧</span></div><div class="stat-number" id="progressXP">90 <small>XP</small></div><div class="stat-foot">Продолжай учиться</div></article><article class="stat-card"><div class="stat-top"><span>УРОКИ</span><span class="stat-icon blue">▤</span></div><div class="stat-number" id="progressLessons">0</div><div class="stat-foot">Завершённых уроков</div></article><article class="stat-card"><div class="stat-top"><span>КУРСЫ</span><span class="stat-icon orange">◎</span></div><div class="stat-number" id="progressCourses">0</div><div class="stat-foot">В твоей библиотеке</div></article></div>
+          <div class="panel progress-panel"><div class="panel-title"><div><h2>Прогресс по курсам</h2><p class="muted">Каждый процент — это твоя работа.</p></div></div><div id="progressList"></div></div>
+        </section>
+
+        <section class="page" id="page-achievements">
+          <div class="page-intro"><div class="eyebrow">ПОВОД ГОРДИТЬСЯ СОБОЙ</div><h1>Твои <em>достижения.</em></h1><p class="muted">Не сравнивай свой старт с чужой серединой.</p></div><div class="achievement-grid" id="achievementGrid"></div>
+        </section>
+
+        <section class="page" id="page-course-detail">
+          <button class="back-link" data-page="courses">← Вернуться к курсам</button><div id="courseDetail"></div>
+        </section>
+
+        <section class="page" id="page-profile">
+          <div class="page-intro"><div class="eyebrow">ТВОЙ АККАУНТ</div><h1>Личный <em>профиль.</em></h1></div><div class="panel profile-panel"><div class="profile-large"><span class="avatar avatar-large" id="profileAvatar">A</span><div><h2 id="profileName">Гость</h2><p class="muted" id="profileEmail">Демо-профиль</p></div></div><div class="profile-fields"><label>Имя<input id="editName" maxlength="40"></label><label>О себе<textarea id="editBio" rows="3" placeholder="Расскажи немного о своих целях..."></textarea></label><button class="btn btn-dark" id="saveProfile">Сохранить изменения</button><button class="text-link danger" id="logoutButton">Выйти из аккаунта</button></div></div></section>
+      </div>
+      <footer class="footer"><span>© 2026 EduSpace</span><span>Учись без границ. Развивайся сегодня.</span><span>Сделано с интересом к знаниям ✦</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Закрыть">×</button><div id="modalContent"></div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

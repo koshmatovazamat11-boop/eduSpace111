@@ -1,0 +1,3 @@
+Project name: EduSpace
+This starter project was generated for the user as a customizable educational website prototype.
+Before publishing or reusing third-party assets, fonts, libraries or course materials, verify their licenses.
